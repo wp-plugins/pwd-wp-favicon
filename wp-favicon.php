@@ -1,14 +1,14 @@
 <?php
 /*
   Plugin Name: PWD WP Favicon
-  Version: 1.0
+  Version: 1.1
   Plugin URI: http://www.plateformewpdigital.fr/plugins/wp-favicon
-  Description: Add favicon
+  Description: Add custom favicon & Apple touch icon for your website
   Author: Plateforme WP Digital, Kulka Nicolas
   Author URI: http://www.plateformewpdigital.fr
   Domain Path: languages
   Network: false
-  Text Domain: wp-favicon
+  Text Domain: pwd-wp-favicon
  */
 // don't load directly
 if ( !defined( 'ABSPATH' ) ) {
@@ -16,7 +16,7 @@ if ( !defined( 'ABSPATH' ) ) {
 }
 
 // Plugin constants
-define( 'PWD_FAVICON_VERSION', '1.0' );
+define( 'PWD_FAVICON_VERSION', '1.1' );
 define( 'PWD_FAVICON_FOLDER', 'wp-favicon' );
 
 define( 'PWD_FAVICON_URL', plugin_dir_url( __FILE__ ) );
@@ -37,7 +37,7 @@ _pwd_favicon_load_files( PWD_FAVICON_DIR . 'classes/', array('plugin') );
 add_action( 'plugins_loaded', 'init_pwd_faviconplugin' );
 function init_pwd_faviconplugin() {
 
-    load_plugin_textdomain( 'wp-favicon', false, basename( dirname( __FILE__ ) ) . '/languages/' );
+    load_plugin_textdomain( 'pwd-wp-favicon', false, basename( dirname( __FILE__ ) ) . '/languages/' );
 
 	// Load client
 	new PWD_FAVICON_Plugin();
